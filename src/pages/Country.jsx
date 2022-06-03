@@ -24,7 +24,6 @@ const Country = () => {
     let response = await fetch(`https://restcountries.com/v3.1/alpha/${params.cca2}`);
     let data = await response.json();
 
-    console.log(data);
     setCountryData(data);
     setLoading(false);
 
