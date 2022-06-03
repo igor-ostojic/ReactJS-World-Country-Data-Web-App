@@ -1,0 +1,150 @@
+@import "./index.scss";
+
+.country-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 70px;
+  padding-top: 3rem;
+
+  @media (max-width: 1470px) {
+    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.country-back-button {
+  border: none;
+  padding: 0.5rem 1.35rem;
+  border-radius: 5px;
+  max-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-bottom: 3rem;
+  text-decoration: none;
+  color: $DarkBlue;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background-color: $White;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+
+  @media (max-width: 1050px) {
+    margin-bottom: 3rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $VeryLightGray;
+  }
+
+  svg {
+    width: 25px;
+  }
+}
+
+.country-info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $DarkBlue;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    padding-bottom: 3rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+
+  @media (max-width: 550px) {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+.image-container {
+  // height: 50vh;
+  width: 45%;
+
+  @media (max-width: 1250px) {
+    width: 55%;
+  }
+
+  @media (max-width: 950px) {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.text-container {
+  width: 42%;
+  text-align: left;
+  h1 {
+    color: $VeryDarkBlue2;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 950px) {
+    margin-left: 1rem;
+    width: 100%;
+  }
+}
+
+.small-text-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+
+  .left-text {
+    @media (max-width: 1145px) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  p {
+    font-weight: 800;
+    line-height: 1.75rem;
+  }
+
+  span {
+    font-weight: 400;
+  }
+}
+
+.border-countries-container {
+  display: flex;
+  align-items: center;
+
+  p {
+    font-weight: 800;
+  }
+}
+
+.border-countries {
+  margin-left: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  a {
+    font-size: 0.75rem;
+    text-decoration: none;
+    color: $VeryDarkBlue;
+    font-weight: 800;
+    padding: 0.35rem 0.75rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 8px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $VeryLightGray;
+    }
+  }
+}

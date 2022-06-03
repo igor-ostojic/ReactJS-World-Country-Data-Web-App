@@ -1,0 +1,225 @@
+@import "./index.scss";
+
+.Home {
+  margin-top: 70px;
+  background-color: $VeryLightGray;
+}
+
+.home-wrapper {
+  min-height: 90vh;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media (max-width: 1470px) {
+    padding: 0rem 1rem;
+  }
+}
+
+.filter-container {
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.search-filter {
+  background-color: $White;
+  display: flex;
+  padding: 0.75rem;
+  border-radius: 5px;
+  width: 35%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+  @media (max-width: 1100px) {
+    width: 50%;
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+
+  input[type="search"] {
+    width: 100%;
+    border: none;
+    background: $White;
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: $DarkBlue;
+    font-weight: 600;
+    border: 1px solid transparent;
+    border-radius: inherit;
+
+    @media screen and (-webkit-min-device-pixel-ratio: 2) {
+      font-size: 16px;
+    }
+  }
+
+  input[type="search"]::placeholder {
+    font-size: 0.8rem;
+    color: $DarkGray;
+    font-weight: 600;
+  }
+
+  button[type="submit"] {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    background: transparent
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+      no-repeat center;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  button[type="submit"]:hover {
+    opacity: 1;
+  }
+
+  button[type="submit"]:focus,
+  input[type="search"]:focus {
+    outline: dashed 3px #b1b1b1;
+  }
+}
+
+/* Dropdown Button */
+.dropbtn {
+  border-radius: 5px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $White;
+  color: $DarkBlue;
+  font-weight: 600;
+  padding: 20px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+
+  svg {
+    width: 15px;
+  }
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: $VeryLightGray;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  animation: fade-in 0.25s ease;
+  border-radius: 5px;
+  position: absolute;
+  text-align: left;
+  background-color: $White;
+  width: 200px;
+  margin-top: 0.55rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-weight: 600;
+
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0.2;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+/* Links inside the dropdown */
+.dropdown-content p {
+  color: $DarkBlue;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 6px 16px;
+  text-decoration: none;
+  display: block;
+
+  @media (max-width: 800px) {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content p:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+
+.country-container {
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  @keyframes slide-top {
+    0% {
+      opacity: 0.5;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.load-more-button {
+  margin: 2.5rem 0;
+  border: none;
+  background-color: $VeryLightGray;
+  color: $VeryDarkBlue2;
+  padding: 1rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+}
